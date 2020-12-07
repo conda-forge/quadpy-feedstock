@@ -1,5 +1,5 @@
 {% set name = "quadpy" %}
-{% set version = "0.16.2" %}
+{% set version = "0.16.4" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quadpy-{{ version }}.tar.gz
-  sha256: fbc8acf25b36a2305c6b949daf7506e4197559915ed07637c5322360fbfde6dd
+  sha256: 2999cb6cc220046b4358582f84f3f0594bb02a60f7c897f953760472c247d164
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -41,7 +41,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: 'Numerical integration (quadrature, cubature) in Python'
+  summary: Numerical integration (quadrature, cubature) in Python
   description: |
     Your one-stop shop for numerical integration in Python.
   doc_url: https://github.com/nschloe/quadpy
