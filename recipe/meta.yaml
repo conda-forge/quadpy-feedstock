@@ -1,5 +1,5 @@
 {% set name = "quadpy" %}
-{% set version = "0.16.9" %}
+{% set version = "0.16.10" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quadpy-{{ version }}.tar.gz
-  sha256: 2a230602068599991bc96112cae52e61a354e1d5a6eb2d3cc825b5321f49a8b3
+  sha256: 6915dd2cbb3bf3980168e81dff8cc11c91e5f045edf7ee95011d1c8af79acfd1
 
 build:
   number: 0
