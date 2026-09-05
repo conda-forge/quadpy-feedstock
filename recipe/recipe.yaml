@@ -1,19 +1,21 @@
-{% set name = "quadpy" %}
-{% set version = "0.16.10" %}
+schema_version: 1
 
+context:
+  name: quadpy
+  version: "0.16.10"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quadpy-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/quadpy-${{ version }}.tar.gz
   sha256: 6915dd2cbb3bf3980168e81dff8cc11c91e5f045edf7ee95011d1c8af79acfd1
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -28,24 +30,22 @@ requirements:
     - scipy
     - sympy
 
-test:
-  imports:
-    - quadpy
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - quadpy
+      pip_check: true
 
+      python_version: ${{ python_min }}.*
 about:
-  home: https://github.com/nschloe/quadpy
   license: GPL-3.0-only
-  license_family: GPL
   license_file: LICENSE
   summary: Numerical integration (quadrature, cubature) in Python
   description: |
     Your one-stop shop for numerical integration in Python.
-  doc_url: https://github.com/nschloe/quadpy
-  dev_url: https://github.com/nschloe/quadpy
+  homepage: https://github.com/nschloe/quadpy
+  repository: https://github.com/nschloe/quadpy
+  documentation: https://github.com/nschloe/quadpy
 
 extra:
   recipe-maintainers:
